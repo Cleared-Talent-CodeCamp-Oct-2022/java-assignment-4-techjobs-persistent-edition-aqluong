@@ -31,9 +31,13 @@ public class EmployerController {
         return "redirect:";
     }
 
+    // Use the employerRepository to save our newEmployer to the database
+
     @GetMapping("view/{employerId}")
     public String displayViewEmployer(Model model, @PathVariable int employerId) {
 
+        // use the findById method of the employerRepository along with the
+        // employerId parameter to get a specific single employer from the database
         Optional optEmployer = null;
         if (optEmployer.isPresent()) {
             Employer employer = (Employer) optEmployer.get();

@@ -7,14 +7,20 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.Objects;
 
+//Therefore, give AbstractEntity the @MappedSuperclass annotation.✅
 @MappedSuperclass
 public abstract class AbstractEntity {
-@Id
-@GeneratedValue
-
+    // add the @Id and @GeneratedValue annotations to the field id. ✅
+    @Id
+    @GeneratedValue
     private int id;
-@NotNull(message = "Cannot Leave Blank!")
-@Size(min = 1, max = 50, message = "Please input a name between 1 and 50 characters.")
+//    a user cannot leave this field blank when creating an object.✅
+//    there are reasonable limitations on the size of the name string.
+//    Keep in mind that the name field will be shared across Job, Employer, and Skill classes.
+//    Some employer names might be longer than 50 characters. ✅
+
+    @NotNull(message = "Cannot Leave Blank!")
+    @Size(min = 1, max = 50, message = "Please input a size between 1 and 50 characters.")
     private String name;
 
     public int getId() {
