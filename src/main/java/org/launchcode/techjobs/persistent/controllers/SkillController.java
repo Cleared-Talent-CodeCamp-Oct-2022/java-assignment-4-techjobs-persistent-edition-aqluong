@@ -21,6 +21,9 @@ public class SkillController {
     @Autowired
     private SkillRepository skillRepository;
 
+//    @GetMapping()
+//    public String index()
+
     @GetMapping
     public String displayAllSkills(Model model){
         model.addAttribute("title", "All Skills");
