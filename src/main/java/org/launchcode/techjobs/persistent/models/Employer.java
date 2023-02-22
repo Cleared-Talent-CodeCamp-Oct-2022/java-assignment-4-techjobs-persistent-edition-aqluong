@@ -9,7 +9,7 @@ public class Employer extends AbstractEntity {
     //    Employer should have a string field for location.✅
 //    Add the field for location with validation that ensures it is not empty and has a reasonable length.✅
 //    In addition, add public accessor methods to Employer.✅
-    @Size(min = 1, max = 50)
+    @Size(min = 1, max = 50, message = "Please keep Employer name under 50 characters.")
     @NotNull(message = "Location input is required")
     private String location;
 
