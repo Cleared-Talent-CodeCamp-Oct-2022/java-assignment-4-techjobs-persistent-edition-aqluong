@@ -22,16 +22,24 @@ public class Employer extends AbstractEntity {
     @OneToMany
 @JoinColumn
     private List<Job> jobs = new ArrayList<>();
-//    private property jobs of type List<Job> and initialize it to an empty ArrayList.✅
-//    no-arg constructor required for Hibernate✅
+    //    private property jobs of type List<Job> and initialize it to an empty ArrayList.✅
+
+    //    no-arg constructor required for Hibernate✅
     public Employer(){
     }
-
     public String getLocation() {
         return location;
     }
 
     public void setLocation(String location) {
         this.location = location;
+    }
+
+    public List<Job> getJobs() {
+        return jobs;
+    }
+
+    public void setJobs(List<Job> jobs) {
+        this.jobs = jobs;
     }
 }
