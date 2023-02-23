@@ -40,7 +40,7 @@ public class ListController {
 //    You’ll also need to pass the employer and skill data from those repositories into the view template rendered at list/✅
     @RequestMapping("")
     public String list(Model model) {
-        model.addAttribute("jobs", jobRepository.findAll());
+//        model.addAttribute("jobs", jobRepository.findAll());
         model.addAttribute("skills", skillRepository.findAll());
         model.addAttribute("employers", employerRepository.findAll());
 
